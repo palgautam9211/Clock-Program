@@ -1,0 +1,23 @@
+from tkinter import *
+from time import *
+def update():
+  time_string=strftime("%I:%M:%S %p")
+  time_label.config(text=time_string)
+  time_label.after(1000,update)
+  day_string=strftime("%A")
+  day_label.config(text=day_string)
+  date_string=strftime("%B %d,%Y")
+  date_label.config(text=date_string)
+w=Tk()
+w.title("Clock Program")
+label=Label(w,text="*Clock*",font=("Arial",30),fg="#000000")
+label.pack()
+print("-------------")
+time_label=Label(w,font=("Bold",50),fg="#00ff00",bg="black")
+time_label.pack()
+day_label=Label(w,font=("Arial",30),fg="#000000",bg="white")
+day_label.pack()
+date_label=Label(w,font=("Arial",30),fg="#00ff00",bg="black")
+date_label.pack()
+update()
+mainloop()
